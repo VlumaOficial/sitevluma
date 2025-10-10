@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"windsurf.persistConversation": true,
+		"windsurf.projectContext": "c:\vluma",
+		"windsurf.autoSaveContext": true,
+		"windsurf.conversationHistory": true,
+		"windsurf.contextTimeout": 0,
+		"windsurf.maxContextSize": 100000,
+		"windsurf.enableProjectMemory": true,
+		"windsurf.saveConversationOnClose": true,
+		"windsurf.restoreConversationOnOpen": true,
+		"files.autoSave": "onFocusChange",
+		"workbench.startupEditor": "none",
+		"workbench.editor.restoreViewState": true,
+		"window.restoreWindows": "all"
+	},
+	"extensions": {
+		"recommendations": [
+			"codeium.codeium"
+		]
+	}
+}
