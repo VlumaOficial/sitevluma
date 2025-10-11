@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { motion, HTMLMotionProps, MotionValue } from "framer-motion"
+import { motion, HTMLMotionProps } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -33,23 +33,22 @@ const buttonVariants = cva(
   }
 )
 
-// Common props that are always present, regardless of `asChild`
+// Common props that are always present, regardless of `asChild`, excluding 'children'
 interface CommonProps extends VariantProps<typeof buttonVariants> {
   className?: string;
 }
 
-// Props when `asChild` is true: `Slot` is rendered, `children` must be `ReactNode`.
-interface ButtonAsChildProps extends CommonProps {
+// Props when `asChild` is true: `Slot` is rendered.
+// We explicitly omit framer-motion specific props here, as they should be on the child.
+interface ButtonAsChildProps extends CommonProps, Omit<React.ComponentPropsWithoutRef<'button'>, keyof HTMLMotionProps<'button'>> {
   asChild: true;
-  children?: React.ReactNode;
+  children?: React.ReactNode; // Slot expects ReactNode children
 }
 
-// Props when `asChild` is false: `motion.button` is rendered, `children` can be `MotionValue`.
-// We extend `HTMLMotionProps<'button'>` but explicitly override `children` to allow `MotionValue`.
-// Also, ensure `asChild` is optional or false.
-interface ButtonDefaultProps extends CommonProps, Omit<HTMLMotionProps<'button'>, 'children'> {
+// Props when `asChild` is false: `motion.button` is rendered.
+// It accepts all HTMLMotionProps, which already includes its own 'children' definition.
+interface ButtonDefaultProps extends CommonProps, HTMLMotionProps<'button'> {
   asChild?: false;
-  children?: React.ReactNode | MotionValue<any>; // motion.button allows MotionValue children
 }
 
 // The final ButtonProps is a union of these two cases.
@@ -61,18 +60,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (asChild) {
       // When asChild is true, we render Slot.
-      // Slot expects children to be ReactNode.
-      // We explicitly cast children to React.ReactNode to satisfy Slot's type requirements.
+      // We cast props to a type that Slot expects, ensuring no framer-motion specific props are passed directly.
       return (
-        <Slot className={classes} ref={ref} {...props}>
-          {children as React.ReactNode}
+        <Slot className={classes} ref={ref} {...(props as React.ComponentPropsWithoutRef<typeof Slot>)}>
+          {children}
         </Slot>
       );
     } else {
       // When asChild is false, we render motion.button.
-      // motion.button can accept MotionValue as children.
+      // All props (including motion props) are valid here.
       return (
-        <motion.button className={classes} ref={ref} {...props}>
+        <motion.button className={classes} ref={ref} {...(props as HTMLMotionProps<'button'>)}>
           {children}
         </motion.button>
       );
