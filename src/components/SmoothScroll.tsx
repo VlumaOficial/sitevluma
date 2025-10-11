@@ -18,19 +18,22 @@ export default function SmoothScroll() {
         const sections = document.querySelectorAll('main > section')
         const scrollPosition = window.scrollY + window.innerHeight / 2
 
-        let closestSection: Element | null = null
+        let closestSection: HTMLElement | null = null // Explicitly type as HTMLElement | null
         let closestDistance = Infinity
 
         // Encontra a seção mais próxima
         sections.forEach((section) => {
-          const rect = section.getBoundingClientRect()
-          const sectionTop = rect.top + window.scrollY
-          const sectionMiddle = sectionTop + rect.height / 2
-          const distance = Math.abs(scrollPosition - sectionMiddle)
+          // Ensure section is an HTMLElement before using getBoundingClientRect
+          if (section instanceof HTMLElement) {
+            const rect = section.getBoundingClientRect()
+            const sectionTop = rect.top + window.scrollY
+            const sectionMiddle = sectionTop + rect.height / 2
+            const distance = Math.abs(scrollPosition - sectionMiddle)
 
-          if (distance < closestDistance) {
-            closestDistance = distance
-            closestSection = section
+            if (distance < closestDistance) {
+              closestDistance = distance
+              closestSection = section
+            }
           }
         })
 
