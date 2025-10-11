@@ -36,6 +36,7 @@ const buttonVariants = cva(
 // Common props that are always present, regardless of `asChild`, excluding 'children'
 interface CommonProps extends VariantProps<typeof buttonVariants> {
   className?: string;
+  // children is handled conditionally below
 }
 
 // Props when `asChild` is true: `Slot` is rendered.
@@ -60,10 +61,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (asChild) {
       // When asChild is true, we render Slot.
-      // We cast props to a type that Slot expects, ensuring no framer-motion specific props are passed directly.
+      // We explicitly cast children to React.ReactNode to satisfy Slot's type requirements.
       return (
         <Slot className={classes} ref={ref} {...(props as React.ComponentPropsWithoutRef<typeof Slot>)}>
-          {children}
+          {children as React.ReactNode}
         </Slot>
       );
     } else {
