@@ -39,7 +39,7 @@ export default function SmoothScroll() {
 
         // Scroll suave para a seção mais próxima
         if (closestSection) {
-          const rect = closestSection.getBoundingClientRect()
+          const rect = (closestSection as HTMLElement).getBoundingClientRect() // Type assertion here
           const offsetTop = rect.top + window.scrollY
 
           window.scrollTo({

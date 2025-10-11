@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { motion, HTMLMotionProps } from "framer-motion"
+import { motion, HTMLMotionProps, MotionValue } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -33,25 +33,52 @@ const buttonVariants = cva(
   }
 )
 
-export interface ButtonProps
-  extends HTMLMotionProps<'button'>, // HTMLMotionProps already includes React.ButtonHTMLAttributes
-    VariantProps<typeof buttonVariants>
-{
-  asChild?: boolean
+// Common props that are always present, regardless of `asChild`
+interface CommonProps extends VariantProps<typeof buttonVariants> {
+  className?: string;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : motion.button
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
+// Props when `asChild` is true: `Slot` is rendered, `children` must be `ReactNode`.
+interface ButtonAsChildProps extends CommonProps {
+  asChild: true;
+  children?: React.ReactNode;
+}
 
-export { Button, buttonVariants }
+// Props when `asChild` is false: `motion.button` is rendered, `children` can be `MotionValue`.
+// We extend `HTMLMotionProps<'button'>` but explicitly override `children` to allow `MotionValue`.
+// Also, ensure `asChild` is optional or false.
+interface ButtonDefaultProps extends CommonProps, Omit<HTMLMotionProps<'button'>, 'children'> {
+  asChild?: false;
+  children?: React.ReactNode | MotionValue<any>; // motion.button allows MotionValue children
+}
+
+// The final ButtonProps is a union of these two cases.
+export type ButtonProps = ButtonAsChildProps | ButtonDefaultProps;
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+    const classes = cn(buttonVariants({ variant, size, className }));
+
+    if (asChild) {
+      // When asChild is true, we render Slot.
+      // Slot expects children to be ReactNode.
+      // We explicitly cast children to React.ReactNode to satisfy Slot's type requirements.
+      return (
+        <Slot className={classes} ref={ref} {...props}>
+          {children as React.ReactNode}
+        </Slot>
+      );
+    } else {
+      // When asChild is false, we render motion.button.
+      // motion.button can accept MotionValue as children.
+      return (
+        <motion.button className={classes} ref={ref} {...props}>
+          {children}
+        </motion.button>
+      );
+    }
+  }
+);
+Button.displayName = "Button";
+
+export { Button, buttonVariants };
