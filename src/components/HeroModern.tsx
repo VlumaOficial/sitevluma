@@ -45,18 +45,6 @@ export default function HeroModern() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-vivid/20 to-blue-vivid/20 border border-purple-vivid/30 backdrop-blur-sm mb-8"
-            >
-              <Sparkles className="w-4 h-4 text-cyan-vivid" />
-              <span className="text-sm font-semibold bg-gradient-to-r from-purple-vivid to-cyan-vivid bg-clip-text text-transparent">
-                Powered by AI
-              </span>
-            </motion.div>
 
             {/* Main Title */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-branco-puro mb-6 leading-tight">
@@ -88,43 +76,18 @@ export default function HeroModern() {
               para empresas que querem liderar o futuro.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
             >
               <button className="group px-8 py-4 bg-gradient-to-r from-purple-vivid to-blue-vivid text-white font-bold rounded-xl hover:scale-105 transition-all shadow-2xl hover:shadow-purple-vivid/50 flex items-center justify-center gap-2">
                 Começar Agora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 bg-white/5 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 transition-all flex items-center justify-center gap-2">
-                <Zap className="w-5 h-5 text-cyan-vivid" />
-                Ver Demo
-              </button>
             </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              className="grid grid-cols-3 gap-6 mt-12"
-            >
-              <div>
-                <div className="text-3xl font-bold text-purple-vivid">98%</div>
-                <div className="text-sm text-gray-500">Satisfação</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-blue-vivid">+50</div>
-                <div className="text-sm text-gray-500">Projetos</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-cyan-vivid">5x</div>
-                <div className="text-sm text-gray-500">ROI Médio</div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right Content - Floating Cards */}
@@ -136,7 +99,7 @@ export default function HeroModern() {
           >
             {/* Center Logo */}
             <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
               animate={{ rotate: 360 }}
               transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
             >
@@ -145,21 +108,97 @@ export default function HeroModern() {
 
             {/* Floating Card 1 */}
             <motion.div
-              className="absolute top-20 left-10 w-48 h-32 bg-gradient-to-br from-purple-vivid/20 to-blue-vivid/20 backdrop-blur-xl rounded-2xl border border-white/10 p-4 shadow-2xl"
+              className="absolute top-20 left-10 w-48 h-32 bg-gradient-to-br from-purple-vivid/20 to-blue-vivid/20 backdrop-blur-xl rounded-2xl border border-white/10 p-4 shadow-2xl z-10"
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 mb-3">
                 <TrendingUp className="w-5 h-5 text-purple-vivid" />
                 <span className="text-sm font-semibold text-white">Crescimento</span>
               </div>
-              <div className="text-2xl font-bold text-white">+127%</div>
-              <div className="text-xs text-gray-400">Este trimestre</div>
+              <div className="flex items-center justify-center">
+                <motion.svg
+                  width="70"
+                  height="45"
+                  viewBox="0 0 70 45"
+                >
+                  <defs>
+                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#8B5CF6" />
+                      <stop offset="50%" stopColor="#3B82F6" />
+                      <stop offset="100%" stopColor="#06B6D4" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Background arc */}
+                  <path
+                    d="M 10 35 A 25 25 0 0 1 60 35"
+                    fill="none"
+                    stroke="rgba(255, 255, 255, 0.1)"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+                  
+                  {/* Animated progress arc */}
+                  <motion.path
+                    d="M 10 35 A 25 25 0 0 1 60 35"
+                    fill="none"
+                    stroke="url(#gaugeGradient)"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 0.85 }}
+                    transition={{ 
+                      duration: 2.5, 
+                      repeat: Infinity, 
+                      repeatType: "reverse",
+                      ease: "easeInOut" 
+                    }}
+                  />
+                  
+                  {/* Center indicator dot */}
+                  <motion.circle
+                    cx="35"
+                    cy="35"
+                    r="3"
+                    fill="#06B6D4"
+                    animate={{ 
+                      scale: [1, 1.3, 1],
+                      opacity: [0.7, 1, 0.7]
+                    }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Infinity, 
+                      ease: "easeInOut" 
+                    }}
+                  />
+                  
+                  {/* Glow effect */}
+                  <motion.circle
+                    cx="35"
+                    cy="35"
+                    r="8"
+                    fill="none"
+                    stroke="#06B6D4"
+                    strokeWidth="1"
+                    opacity="0.3"
+                    animate={{ 
+                      scale: [1, 1.5, 1],
+                      opacity: [0.3, 0, 0.3]
+                    }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Infinity, 
+                      ease: "easeInOut" 
+                    }}
+                  />
+                </motion.svg>
+              </div>
             </motion.div>
 
             {/* Floating Card 2 */}
             <motion.div
-              className="absolute top-32 right-10 w-44 h-28 bg-gradient-to-br from-cyan-vivid/20 to-blue-vivid/20 backdrop-blur-xl rounded-2xl border border-white/10 p-4 shadow-2xl"
+              className="absolute top-32 right-10 w-44 h-28 bg-gradient-to-br from-cyan-vivid/20 to-blue-vivid/20 backdrop-blur-xl rounded-2xl border border-white/10 p-4 shadow-2xl z-10"
               animate={{ y: [0, 20, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
             >
@@ -172,7 +211,7 @@ export default function HeroModern() {
 
             {/* Floating Card 3 */}
             <motion.div
-              className="absolute bottom-24 left-16 w-40 h-28 bg-gradient-to-br from-pink-vivid/20 to-purple-vivid/20 backdrop-blur-xl rounded-2xl border border-white/10 p-4 shadow-2xl"
+              className="absolute bottom-24 left-16 w-40 h-28 bg-gradient-to-br from-pink-vivid/20 to-purple-vivid/20 backdrop-blur-xl rounded-2xl border border-white/10 p-4 shadow-2xl z-10"
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
             >
@@ -184,37 +223,55 @@ export default function HeroModern() {
             </motion.div>
 
             {/* Connection Lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30">
+            <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-50 z-0">
+              {/* Line to Card 1 (Crescimento - top-left) */}
               <motion.line
                 x1="50%"
                 y1="50%"
-                x2="20%"
-                y2="20%"
+                x2="40%"
+                y2="40%"
                 stroke="url(#gradient1)"
-                strokeWidth="2"
-                strokeDasharray="5,5"
+                strokeWidth="2.5"
+                strokeDasharray="6,4"
                 animate={{ strokeDashoffset: [0, -10] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
               />
+              {/* Line to Card 2 (IA Ativa - top-right) */}
               <motion.line
                 x1="50%"
                 y1="50%"
-                x2="80%"
-                y2="30%"
+                x2="60%"
+                y2="40%"
                 stroke="url(#gradient2)"
-                strokeWidth="2"
-                strokeDasharray="5,5"
+                strokeWidth="2.5"
+                strokeDasharray="6,4"
                 animate={{ strokeDashoffset: [0, -10] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'linear', delay: 0.5 }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'linear', delay: 1 }}
+              />
+              {/* Line to Card 3 (Automação - bottom-left) */}
+              <motion.line
+                x1="50%"
+                y1="50%"
+                x2="40%"
+                y2="60%"
+                stroke="url(#gradient3)"
+                strokeWidth="2.5"
+                strokeDasharray="6,4"
+                animate={{ strokeDashoffset: [0, -10] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'linear', delay: 2 }}
               />
               <defs>
                 <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#8B5CF6" />
-                  <stop offset="100%" stopColor="#06B6D4" />
+                  <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.6" />
                 </linearGradient>
                 <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3B82F6" />
-                  <stop offset="100%" stopColor="#EC4899" />
+                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.6" />
+                </linearGradient>
+                <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#EC4899" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.6" />
                 </linearGradient>
               </defs>
             </svg>
