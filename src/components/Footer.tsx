@@ -163,14 +163,14 @@ export default function Footer() {
               © 2025 VLUMA. Todos os direitos reservados.
             </p>
             <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>Feito com</span>
+              <span>design by</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
                 <Sparkles className="w-4 h-4 text-purple-vivid" />
               </motion.div>
-              <span>pela equipe VLUMA</span>
+              <span>vluma</span>
             </div>
           </div>
         </motion.div>
