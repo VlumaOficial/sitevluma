@@ -68,7 +68,7 @@ export default function Solution() {
   ]
 
   return (
-    <section className="relative min-h-screen bg-fundo-escuro overflow-hidden py-20">
+    <section id="solucoes" className="relative min-h-screen bg-fundo-escuro overflow-hidden py-20">
       {/* Animated Background Gradients - Matching Hero */}
       <div className="absolute inset-0">
         <motion.div
