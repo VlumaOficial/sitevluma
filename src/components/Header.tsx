@@ -36,17 +36,17 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="container-custom flex items-center justify-between px-6 lg:px-12">
+      <div className="container-custom flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12">
         <motion.a
           href="#hero"
           className="flex items-center gap-3"
           whileHover={{ scale: 1.05 }}
         >
-          <Logo size={40} />
-          <span className="text-xl font-display font-bold text-branco-puro">VLUMA</span>
+          <Logo size={32} />
+          <span className="text-lg sm:text-xl font-display font-bold text-branco-puro">VLUMA</span>
         </motion.a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -57,16 +57,16 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-verde-inteligente group-hover:w-full transition-all duration-300" />
             </a>
           ))}
-          <button className="px-6 py-2 bg-laranja-energia text-white font-semibold rounded-lg hover:scale-105 transition-transform">
+          <button className="px-4 py-2 lg:px-6 bg-laranja-energia text-white text-sm lg:text-base font-semibold rounded-lg hover:scale-105 transition-transform">
             Agendar Sessão
           </button>
         </nav>
 
         <button
-          className="md:hidden text-branco-puro"
+          className="md:hidden text-branco-puro p-2 hover:bg-white/10 rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -76,7 +76,7 @@ export default function Header() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
         >
-          <nav className="flex flex-col gap-4 p-6">
+          <nav className="flex flex-col gap-4 p-4 sm:p-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -87,7 +87,7 @@ export default function Header() {
                 {link.name}
               </a>
             ))}
-            <button className="w-full px-6 py-3 bg-laranja-energia text-white font-semibold rounded-lg mt-4">
+            <button className="w-full px-6 py-3 bg-laranja-energia text-white font-semibold rounded-lg mt-4 hover:bg-laranja-energia/90 transition-colors">
               Agendar Sessão
             </button>
           </nav>
