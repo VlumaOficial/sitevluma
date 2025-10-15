@@ -31,10 +31,40 @@ export default function Solution() {
   ]
 
   const sectors = [
-    'Saúde', 'Advogados', 'Imobiliárias', 'Restaurantes', 'Educação',
-    'E-commerce', 'Consultorias', 'Startups', 'Marketing Digital', 'Finanças',
-    'Pet Shops', 'Pizzarias', 'Indústrias', 'SaaS/Tech', 'Construção',
-    'Beleza', 'Outros'
+    // Saúde e Bem-Estar
+    'Clínicas e Saúde',
+    'Beleza e Bem-Estar',
+    
+    // Serviços Profissionais
+    'Advocacia',
+    'Contabilidade',
+    'Consultorias',
+    'Profissionais Liberais',
+    
+    // Imóveis e Seguros
+    'Corretores (Seguros e Imóveis)',
+    'Imobiliárias',
+    'Construção',
+    
+    // Educação e Marketing
+    'Educação e Cursos',
+    'Agências',
+    'Marketing Digital',
+    
+    // Comércio e Vendas
+    'Lojas e Comércio',
+    'E-commerce',
+    'Pizzarias',
+    'Pet Shops',
+    
+    // Negócios e Tecnologia
+    'Empreendedores',
+    'Finanças',
+    'SaaS/Tech',
+    'Indústrias',
+    
+    // Geral
+    'Outros'
   ]
 
   return (
@@ -74,7 +104,7 @@ export default function Solution() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
@@ -90,7 +120,7 @@ export default function Solution() {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ amount: 0.3 }}
               transition={{ 
                 duration: 0.6, 
                 delay: index * 0.2,
@@ -128,7 +158,7 @@ export default function Solution() {
                         key={itemIndex}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ amount: 0.3 }}
                         transition={{ 
                           duration: 0.4, 
                           delay: index * 0.2 + itemIndex * 0.1 + 0.3
@@ -152,7 +182,7 @@ export default function Solution() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
@@ -167,7 +197,7 @@ export default function Solution() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ amount: 0.3 }}
                 transition={{ 
                   duration: 0.4, 
                   delay: index * 0.05 + 0.6,

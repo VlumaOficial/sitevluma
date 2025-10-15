@@ -63,7 +63,7 @@ export default function Plans() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -85,7 +85,7 @@ export default function Plans() {
               key={planIndex}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
               transition={{ duration: 0.6, delay: planIndex * 0.2 }}
               className="group relative"
             >
@@ -115,7 +115,7 @@ export default function Plans() {
                         key={index}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ amount: 0.3 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
                         whileHover={{ x: 5 }}
                         className="flex items-start gap-4 group/item"
@@ -147,7 +147,7 @@ export default function Plans() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
@@ -162,7 +162,7 @@ export default function Plans() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ amount: 0.3 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="group px-5 py-3 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700 hover:border-cyan-vivid/50 rounded-2xl text-branco-suave text-sm font-medium transition-all cursor-default shadow-lg"

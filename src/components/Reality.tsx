@@ -43,13 +43,13 @@ export default function Reality() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ amount: 0.3 }}
             transition={{ duration: 0.8 }}
           >
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-branco-puro mb-6 leading-tight"
             >
@@ -62,7 +62,7 @@ export default function Reality() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-gray-300 mb-8 leading-relaxed"
             >
@@ -72,7 +72,7 @@ export default function Reality() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <button className="group px-8 py-4 bg-white/5 backdrop-blur-xl text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300 flex items-center gap-2">
@@ -91,7 +91,7 @@ export default function Reality() {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative flex items-center justify-center h-[400px]"
           >

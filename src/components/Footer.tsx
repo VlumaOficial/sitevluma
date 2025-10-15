@@ -51,7 +51,7 @@ export default function Footer() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
               transition={{ duration: 0.6 }}
               className="lg:col-span-2"
             >
@@ -80,7 +80,7 @@ export default function Footer() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h4 className="text-xl font-black text-branco-puro mb-6">Links Rápidos</h4>
@@ -90,7 +90,7 @@ export default function Footer() {
                     key={index}
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ amount: 0.3 }}
                     transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
                   >
                     <a 
@@ -109,7 +109,7 @@ export default function Footer() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h4 className="text-xl font-black text-branco-puro mb-6">Contato</h4>
@@ -138,7 +138,7 @@ export default function Footer() {
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
+                      viewport={{ amount: 0.3 }}
                       transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}
                     >
                       <social.icon className="w-5 h-5" />
@@ -154,7 +154,7 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="border-t border-white/10 py-8"
         >

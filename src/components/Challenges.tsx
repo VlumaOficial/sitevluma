@@ -58,7 +58,7 @@ export default function Challenges() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
@@ -73,7 +73,7 @@ export default function Challenges() {
               key={index}
               initial={{ opacity: 0, x: index === 0 ? -50 : index === 2 ? 50 : 0, y: 30 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="group"
             >

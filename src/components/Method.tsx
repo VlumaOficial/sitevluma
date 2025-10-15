@@ -87,7 +87,7 @@ export default function Method() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
@@ -120,9 +120,9 @@ export default function Method() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: isLeft ? -60 : 60, y: 30 }}
+                  initial={{ opacity: 0, x: -60, y: 30 }}
                   whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ amount: 0.3 }}
                   transition={{ 
                     duration: 0.7, 
                     delay: index * 0.15,
@@ -130,12 +130,12 @@ export default function Method() {
                   }}
                   className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}
                 >
-                  {/* Number Badge with Glow - Always centered */}
+                  {/* Number Badge with Glow - Always on timeline center */}
                   <motion.div
                     className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center shadow-2xl z-20"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ amount: 0.3 }}
                     transition={{ 
                       duration: 0.4, 
                       delay: index * 0.15 + 0.2,
@@ -184,7 +184,7 @@ export default function Method() {
                         </div>
                       </div>
 
-                      {/* Connecting Line to Center */}
+                      {/* Connecting Line to Timeline Center */}
                       <div className={`absolute top-1/2 ${isLeft ? 'right-0 translate-x-full' : 'left-0 -translate-x-full'} w-10 h-0.5 bg-gradient-to-r ${isLeft ? step.gradient : `${step.gradient.split(' ').reverse().join(' ')}`} opacity-30`} />
                     </div>
                   </motion.div>
@@ -198,7 +198,7 @@ export default function Method() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-20"
         >
