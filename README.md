@@ -1,5 +1,7 @@
 # 🚀 VLUMA - Site Agência de IA
 
+<!-- Last updated: 2025-10-15 - Responsividade mobile implementada -->
+
 ## 📋 Descrição do Projeto
 
 Site institucional moderno e inovador para a VLUMA, agência especializada em soluções de Inteligência Artificial para empresas e criadores de conteúdo.
