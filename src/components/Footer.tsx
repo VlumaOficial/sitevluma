@@ -168,7 +168,7 @@ export default function Footer() {
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
-                <Sparkles className="w-4 h-4 text-purple-vivid" />
+                <Logo size={16} />
               </motion.div>
               <span>vluma</span>
             </div>
