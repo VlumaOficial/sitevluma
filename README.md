@@ -204,3 +204,4 @@ npm run dev -- -p 3001
 ---
 
 © 2025 VLUMA. Desenvolvido com tecnologia humanizada.
+# Teste deploy automático
