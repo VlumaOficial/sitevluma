@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar OG Image - VLUMA</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #1a1a1a;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .instructions {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 12px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    
+    .instructions h2 {
+      margin-top: 0;
+      color: #00D9A3;
+    }
+    
+    .instructions ol {
+      line-height: 1.8;
+    }
+    
+    .og-image {
+      width: 1200px;
+      height: 630px;
+      background: #0A0E27;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Gradientes de fundo */
+    .gradient-1 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 217, 163, 0.15) 0%, transparent 70%);
+      top: -200px;
+      left: -200px;
+    }
+    
+    .gradient-2 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      bottom: -200px;
+      right: -200px;
+    }
+    
+    /* Grid pattern */
+    .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(0, 217, 163, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 217, 163, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    
+    /* Conteúdo */
+    .content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 80px;
+      text-align: center;
+    }
+    
+    .logo-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00D9A3 0%, #06B6D4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+      box-shadow: 0 0 60px rgba(0, 217, 163, 0.4);
+    }
+    
+    .logo-letter {
+      font-size: 48px;
+      font-weight: 900;
+      color: #0A0E27;
+      letter-spacing: -2px;
+    }
+    
+    .title {
+      font-size: 72px;
+      font-weight: 900;
+      color: #00D9A3;
+      margin-bottom: 24px;
+      letter-spacing: -2px;
+    }
+    
+    .subtitle {
+      font-size: 36px;
+      font-weight: 600;
+      color: #F8FAFC;
+      margin-bottom: 16px;
+    }
+    
+    .description {
+      font-size: 24px;
+      font-weight: 400;
+      color: #CBD5E1;
+      max-width: 800px;
+    }
+    
+    .badge {
+      margin-top: 40px;
+      padding: 12px 32px;
+      border-radius: 999px;
+      background: rgba(0, 217, 163, 0.1);
+      border: 1px solid rgba(0, 217, 163, 0.3);
+      font-size: 18px;
+      color: #00D9A3;
+      font-weight: 600;
+    }
+    
+    .url {
+      position: absolute;
+      bottom: 40px;
+      font-size: 20px;
+      color: #64748B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="instructions">
+      <h2>📸 Como Gerar a Imagem OG (1200x630px)</h2>
+      <ol>
+        <li>Abra este arquivo no navegador</li>
+        <li>Pressione <strong>F12</strong> para abrir DevTools</li>
+        <li>Pressione <strong>Ctrl+Shift+P</strong> (ou Cmd+Shift+P no Mac)</li>
+        <li>Digite: <strong>Capture full size screenshot</strong></li>
+        <li>Ou use uma ferramenta de screenshot para capturar apenas o card abaixo</li>
+        <li>Salve como <strong>og-image.png</strong> na pasta <code>/public/</code></li>
+      </ol>
+      <p><strong>Alternativa:</strong> Use uma ferramenta online como <a href="https://www.opengraph.xyz/" target="_blank" style="color: #00D9A3;">OpenGraph.xyz</a> para gerar a imagem.</p>
+    </div>
+    
+    <div class="og-image">
+      <div class="gradient-1"></div>
+      <div class="gradient-2"></div>
+      <div class="grid-pattern"></div>
+      
+      <div class="content">
+        <div class="logo-circle">
+          <div class="logo-letter">V</div>
+        </div>
+        
+        <div class="title">VLUMA</div>
+        <div class="subtitle">Agência de IA</div>
+        <div class="description">Transforme seu negócio com Inteligência Artificial</div>
+        
+        <div class="badge">Tecnologia Humanizada</div>
+        
+        <div class="url">www.vluma.com.br</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

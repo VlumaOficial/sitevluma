@@ -1,0 +1,21 @@
+{
+  "name": "VLUMA - Agência de IA",
+  "short_name": "VLUMA",
+  "description": "Transforme seu negócio com Inteligência Artificial. Tecnologia humanizada para impulsionar seu crescimento.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00D9A3",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "pt-BR",
+  "dir": "ltr"
+}
