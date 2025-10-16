@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Script from 'next/script'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import WhatsAppWidget from '@/components/WhatsAppWidget'
 
 const siteUrl = 'https://www.vluma.com.br'
 const siteName = 'VLUMA'
@@ -140,6 +141,9 @@ export default function RootLayout({
       <body>
         {/* Google Analytics */}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        
+        {/* WhatsApp Widget Flutuante */}
+        <WhatsAppWidget />
         
         {children}
       </body>
