@@ -81,12 +81,19 @@ VLUMA/Site/
 npm install
 ```
 
-2. **Executar em desenvolvimento**:
+2. **Configurar Google Analytics (Opcional)**:
+Crie um arquivo `.env.local` na raiz do projeto:
+```bash
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+Veja o guia completo em: `GOOGLE_ANALYTICS_SETUP.md`
+
+3. **Executar em desenvolvimento**:
 ```bash
 npm run dev
 ```
 
-3. **Abrir no navegador**:
+4. **Abrir no navegador**:
 ```
 http://localhost:3000
 ```
@@ -147,8 +154,11 @@ npm run start
 ✅ Hover effects com scale e shadow
 ✅ Animações fluidas com Framer Motion
 ✅ Suporte a prefers-reduced-motion
-✅ SEO otimizado com meta tags
+✅ SEO completo (Open Graph, Schema.org, Twitter Cards)
+✅ Google Analytics 4 integrado
 ✅ Responsividade completa
+✅ PWA manifest
+✅ Sitemap e robots.txt
 
 ## 🔧 Customização
 

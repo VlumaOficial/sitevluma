@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Script from 'next/script'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const siteUrl = 'https://www.vluma.com.br'
 const siteName = 'VLUMA'
@@ -136,7 +137,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {/* Google Analytics */}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        
+        {children}
+      </body>
     </html>
   )
 }
