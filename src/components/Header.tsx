@@ -57,7 +57,7 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-verde-inteligente group-hover:w-full transition-all duration-300" />
             </a>
           ))}
-          <button className="px-4 py-2 lg:px-6 bg-laranja-energia text-white text-sm lg:text-base font-semibold rounded-lg hover:scale-105 transition-transform">
+          <button className="px-4 py-2 lg:px-6 bg-laranja-energia text-white text-sm lg:text-base font-semibold rounded-lg hover:scale-105 transition-transform" onClick={() => window.open('https://comecesuajornada.vluma.com.br/','_blank','noopener,noreferrer')}>
             Agendar Sessão
           </button>
         </nav>
@@ -87,7 +87,7 @@ export default function Header() {
                 {link.name}
               </a>
             ))}
-            <button className="w-full px-6 py-3 bg-laranja-energia text-white font-semibold rounded-lg mt-4 hover:bg-laranja-energia/90 transition-colors">
+            <button className="w-full px-6 py-3 bg-laranja-energia text-white font-semibold rounded-lg mt-4 hover:bg-laranja-energia/90 transition-colors" onClick={() => window.open('https://comecesuajornada.vluma.com.br/','_blank','noopener,noreferrer')}>
               Agendar Sessão
             </button>
           </nav>

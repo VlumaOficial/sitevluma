@@ -82,7 +82,7 @@ export default function HeroModern() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <button className="group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-vivid to-blue-vivid text-white text-sm sm:text-base font-bold rounded-xl hover:scale-105 transition-all shadow-2xl hover:shadow-purple-vivid/50 flex items-center justify-center gap-2">
+              <button className="group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-vivid to-blue-vivid text-white text-sm sm:text-base font-bold rounded-xl hover:scale-105 transition-all shadow-2xl hover:shadow-purple-vivid/50 flex items-center justify-center gap-2" onClick={() => window.open('https://comecesuajornada.vluma.com.br/','_blank','noopener,noreferrer')}>
                 Começar Agora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>

@@ -75,7 +75,7 @@ export default function Reality() {
               viewport={{ amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <button className="group px-8 py-4 bg-white/5 backdrop-blur-xl text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300 flex items-center gap-2">
+              <button className="group px-8 py-4 bg-white/5 backdrop-blur-xl text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 hover:scale-105 transition-all duration-300 flex items-center gap-2" onClick={() => window.open('https://comecesuajornada.vluma.com.br/','_blank','noopener,noreferrer')}>
                 Agendar Sessão de Descoberta
                 <motion.div
                   animate={{ x: [0, 5, 0] }}

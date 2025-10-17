@@ -209,6 +209,7 @@ export default function Method() {
             className="group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-vivid to-blue-vivid text-white font-bold text-sm sm:text-base lg:text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-vivid/50 flex items-center gap-2 mx-auto"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => window.open('https://comecesuajornada.vluma.com.br/','_blank','noopener,noreferrer')}
           >
             Falar com um Especialista
             <motion.div

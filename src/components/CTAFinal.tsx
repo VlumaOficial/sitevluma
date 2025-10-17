@@ -120,6 +120,7 @@ export default function CTAFinal() {
             className="relative bg-gradient-to-r from-purple-vivid to-blue-vivid text-white font-black text-lg md:text-xl px-12 py-6 rounded-2xl border border-white/20 backdrop-blur-xl overflow-hidden group-hover:scale-105 transition-all duration-300 flex items-center gap-4 mx-auto"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => window.open('https://comecesuajornada.vluma.com.br/','_blank','noopener,noreferrer')}
           >
             {/* Button Glow Effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-vivid/20 to-blue-vivid/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

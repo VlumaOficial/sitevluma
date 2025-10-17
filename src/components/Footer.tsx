@@ -69,7 +69,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-vivid/20 to-blue-vivid/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <button className="relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-xl px-6 py-3 text-white font-semibold flex items-center gap-3 transition-all duration-300 hover:bg-white/10">
+                <button className="relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-xl px-6 py-3 text-white font-semibold flex items-center gap-3 transition-all duration-300 hover:bg-white/10" onClick={() => window.open('https://comecesuajornada.vluma.com.br/','_blank','noopener,noreferrer')}>
                   <span>Falar com Especialista</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
